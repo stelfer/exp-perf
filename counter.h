@@ -1,7 +1,7 @@
 // Copyright (C) 2016 by Soren Telfer - MIT License. See LICENSE.txt
 
-#ifndef _PERF_COUNTER_H
-#define _PERF_COUNTER_H
+#ifndef _EXP_PERF_COUNTER_H
+#define _EXP_PERF_COUNTER_H
 
 #include <asm/unistd.h>
 #include <linux/perf_event.h>
@@ -11,8 +11,7 @@
 #include <system_error>
 #include <vector>
 
-namespace perf
-{
+namespace exp_perf {
 //
 // Wraps results to a perf_event_counter syscall
 //
@@ -169,4 +168,4 @@ counter::perf_event_open(struct perf_event_attr* hw_event,
 }
 }
 
-#endif  //_PERF_COUNTER_H
+#endif //_EXP_PERF_COUNTER_H

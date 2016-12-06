@@ -1,13 +1,13 @@
 // Copyright (C) 2016 by telfer - MIT License. See LICENSE.txt
 
-#ifndef _PERF_COLLECTOR_H
-#define _PERF_COLLECTOR_H
+#ifndef _EXP_PERF_COLLECTOR_H
+#define _EXP_PERF_COLLECTOR_H
 
 #include "counter.h"
 
 #include <cmath>
 
-namespace perf
+namespace exp_perf
 {
 //
 // A collector that implements the collection and testing algorithm in [Add
@@ -84,7 +84,7 @@ class collector
 
     // Wraps the calls to start, stop and run around the internal counter.
     template <typename t_start, typename t_stop, typename t_run>
-    const perf::counter::counts_t& get_counts(int sample_sz,
+    const exp_perf::counter::counts_t& get_counts(int sample_sz,
                                               t_start start,
                                               t_stop stop,
                                               t_run run);
@@ -148,7 +148,7 @@ collector::collect(int N,
 }
 
 template <typename t_start, typename t_stop, typename t_run>
-const perf::counter::counts_t&
+const exp_perf::counter::counts_t&
 collector::get_counts(int N, t_start start, t_stop stop, t_run run)
 {
     start(N);
@@ -218,4 +218,4 @@ collector::collect_for_input_size(int input_sz,
 }
 }
 
-#endif  // _PERF_COLLECTOR_H
+#endif  // _EXP_PERF_COLLECTOR_H
